@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Südfinder Laufliste</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="app-header">
+    <div>
+        <p class="eyebrow">Südfinder Projekt</p>
+        <h1>Laufliste Zeitung austragen</h1>
+        <p class="subtitle">Tour auswählen, Häuser abhaken und Notizen bearbeiten.</p>
+    </div>
+</header>
+
+<main class="app-layout">
+
+    <section class="overview-card">
+        <h2>Heutige Tour</h2>
+
+        <div class="tour-selector-box">
+            <label for="tourSelect" class="label">Tour auswählen</label>
+            <select id="tourSelect" class="tour-select"></select>
+        </div>
+
+        <div class="tour-info">
+            <div>
+                <span class="label">Gebiet</span>
+                <strong id="tourArea">Bad Saulgau</strong>
+            </div>
+
+            <div>
+                <span class="label">Datum</span>
+                <strong id="todayDate">--.--.----</strong>
+            </div>
+
+            <div>
+                <span class="label">Fortschritt</span>
+                <strong>
+                    <span id="doneCount">0</span> /
+                    <span id="totalCount">0</span>
+                </strong>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </section>
+
+    <section class="stats-card">
+        <h2>Tagesstatistik</h2>
+
+        <div class="stats-grid">
+            <div>
+                <span class="label">Offen</span>
+                <strong id="openCount">0</strong>
+            </div>
+
+            <div>
+                <span class="label">Erledigt</span>
+                <strong id="statsDoneCount">0</strong>
+            </div>
+
+            <div>
+                <span class="label">Erfolgsquote</span>
+                <strong id="successRate">0 %</strong>
+            </div>
+        </div>
+
+        <p id="tourStatusText" class="tour-status-text">
+            Tour ist noch nicht abgeschlossen.
+        </p>
+    </section>
+
+    <section class="controls-card">
+        <h2>Suche & Aktionen</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Straße, Hausnummer oder Notiz suchen..."
+            class="search-input"
+        >
+
+        <div class="controls">
+            <button id="showAllButton">Alle anzeigen</button>
+            <button id="showOpenButton">Offene anzeigen</button>
+            <button id="showDoneButton">Erledigte anzeigen</button>
+            <button id="showNormalButton">🟢 Normal</button>
+            <button id="showImportantButton">🟡 Wichtig</button>
+            <button id="showCriticalButton">🔴 Sehr wichtig</button>
+            <button id="resetButton" class="danger-button">Zurücksetzen</button>
+        </div>
+    </section>
+
+    <section class="list-card">
+        <div class="section-headline">
+            <div>
+                <h2>Laufliste</h2>
+                <p>Arbeite die Zustellpunkte der ausgewählten Tour ab.</p>
+            </div>
+        </div>
+
+        <div class="delivery-list" id="deliveryList"></div>
+    </section>
+
+</main>
+
+<script src="data/tour.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>
