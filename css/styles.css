@@ -1,168 +1,250 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0f172a;
-    color: #f8fafc;
+    margin: 0;
     min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    background: #eef2f7;
+    color: #1d1d1f;
 }
 
-.app-header {
-    padding: 40px 20px 25px;
-    text-align: center;
-}
-
-.eyebrow {
-    color: #38bdf8;
-    font-weight: bold;
-    margin-bottom: 8px;
-}
-
-.app-header h1 {
-    font-size: 2.4rem;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    color: #cbd5e1;
-}
-
-.app-layout {
-    width: min(1100px, 100%);
-    margin: 0 auto;
-    padding: 20px;
+.app-shell {
+    min-height: 100vh;
     display: grid;
-    gap: 20px;
+    grid-template-columns: 280px 1fr;
 }
 
-.overview-card,
-.stats-card,
-.controls-card,
-.list-card {
-    background: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 22px;
-    padding: 22px;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+.sidebar {
+    background: #1f2024;
+    color: white;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
 }
 
-.overview-card h2,
-.stats-card h2,
-.controls-card h2,
-.list-card h2 {
-    margin-bottom: 16px;
+.traffic-lights {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 34px;
+}
+
+.traffic-lights span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f57;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #28c840;
+}
+
+.sidebar-label {
+    margin: 0 0 6px;
+    color: #9ca3af;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.sidebar h1 {
+    margin: 0 0 28px;
+    font-size: 34px;
 }
 
 .tour-selector-box {
-    background: #0f172a;
-    border: 1px solid #334155;
-    border-radius: 16px;
-    padding: 16px;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 }
 
-.tour-select {
-    width: 100%;
-    margin-top: 8px;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: bold;
-    background: #f8fafc;
-    color: #0f172a;
-}
-
-.tour-info,
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 18px;
-}
-
-.tour-info div,
-.stats-grid div {
-    background: #0f172a;
-    border-radius: 16px;
-    padding: 16px;
-}
-
-.label {
+.tour-selector-box label {
     display: block;
-    color: #94a3b8;
-    font-size: 0.85rem;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
+    color: #c7c7cc;
+    font-weight: 700;
+}
+
+.tour-selector-box select,
+.search-input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-radius: 14px;
+    padding: 13px 14px;
+    font-size: 15px;
+}
+
+.sidebar-nav {
+    display: grid;
+    gap: 8px;
+}
+
+.sidebar-nav button,
+.danger-button {
+    border: 0;
+    border-radius: 12px;
+    padding: 12px 14px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.sidebar-nav button {
+    background: transparent;
+    color: #d1d5db;
+}
+
+.sidebar-nav button:hover {
+    background: #2d2f35;
+    color: white;
+}
+
+.danger-button {
+    margin-top: auto;
+    background: #3a1f22;
+    color: #ff6961;
+    text-align: center;
+}
+
+.main-content {
+    padding: 32px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.eyebrow,
+.card-label {
+    margin: 0 0 6px;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.topbar h2 {
+    margin: 0;
+    font-size: 38px;
+    letter-spacing: -0.05em;
+}
+
+.subtitle {
+    margin: 8px 0 0;
+    color: #6b7280;
+}
+
+.date-pill {
+    min-width: 150px;
+    border-radius: 18px;
+    padding: 14px 18px;
+    background: white;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.08);
+}
+
+.date-pill span {
+    display: block;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.date-pill strong {
+    font-size: 18px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 18px 50px rgba(31, 41, 55, 0.08);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.progress-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 0 10px;
+    color: #6b7280;
+    font-weight: 700;
 }
 
 .progress-bar {
-    width: 100%;
-    height: 14px;
-    background: #0f172a;
+    height: 12px;
     border-radius: 999px;
+    background: #e5e7eb;
     overflow: hidden;
 }
 
 .progress-fill {
-    width: 0%;
     height: 100%;
-    background: #22c55e;
+    width: 0%;
     border-radius: 999px;
+    background: linear-gradient(135deg, #007aff, #34c759);
     transition: width 0.3s ease;
 }
 
-.tour-status-text {
-    background: #0f172a;
-    border: 1px solid #334155;
-    border-radius: 16px;
-    padding: 14px;
-    color: #cbd5e1;
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
 }
 
-.tour-status-text.finished {
-    color: #bbf7d0;
-    border-color: #22c55e;
+.stats-grid div {
+    border-radius: 18px;
+    padding: 16px;
+    background: #f3f4f6;
+}
+
+.stats-grid span {
+    display: block;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.stats-grid strong {
+    font-size: 26px;
+}
+
+.tour-status-text {
+    margin: 18px 0 0;
+    color: #6b7280;
+    font-weight: 700;
+}
+
+.search-card {
+    margin-bottom: 18px;
 }
 
 .search-input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 12px;
-    border: none;
-    margin-bottom: 15px;
-    font-size: 1rem;
-}
-
-.controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-button {
-    border: none;
-    background: #2563eb;
-    color: white;
-    padding: 12px 16px;
-    border-radius: 14px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #1d4ed8;
-}
-
-.danger-button {
-    background: #dc2626;
-}
-
-.danger-button:hover {
-    background: #b91c1c;
+    background: #f3f4f6;
+    color: #1d1d1f;
 }
 
 .section-headline {
@@ -172,14 +254,15 @@ button:hover {
     margin-bottom: 18px;
 }
 
-.section-headline p {
-    color: #94a3b8;
-}
-
 .delivery-list {
     display: grid;
-    gap: 22px;
+    gap: 18px;
 }
+
+/* ================================
+   Issue #3
+   Zustellkarten im Apple-Stil
+   ================================ */
 
 .street-group {
     display: grid;
@@ -190,143 +273,235 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #020617;
-    border: 1px solid #334155;
-    border-radius: 18px;
+    gap: 14px;
     padding: 14px 16px;
+    border-radius: 20px;
+    background: #f5f7fb;
+    border: 1px solid #e5e7eb;
 }
 
 .street-title h3 {
-    font-size: 1.1rem;
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: -0.04em;
 }
 
 .street-count {
-    color: #94a3b8;
-    font-size: 0.9rem;
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: #ffffff;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 800;
+    white-space: nowrap;
 }
 
 .delivery-item {
-    background: #0f172a;
-    border: 1px solid #334155;
-    border-radius: 18px;
-    padding: 16px;
     display: grid;
-    gap: 12px;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    align-items: stretch;
+    padding: 22px;
+    border-radius: 26px;
+    background: linear-gradient(180deg, #ffffff, #f8fafc);
+    border: 1px solid #e1e5ea;
+    box-shadow: 0 16px 42px rgba(31, 41, 55, 0.08);
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.delivery-item:hover {
+    transform: translateY(-2px);
+    border-color: #d1d8e0;
+    box-shadow: 0 22px 55px rgba(31, 41, 55, 0.12);
 }
 
 .delivery-item.done {
-    border-color: #22c55e;
-    opacity: 0.75;
+    opacity: 1;
+    background: linear-gradient(180deg, #f7fff9, #f0fdf4);
+    border-color: #bbf7d0;
 }
 
 .delivery-top {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 12px;
+    gap: 18px;
 }
 
 .delivery-address {
-    font-size: 1.1rem;
-    font-weight: bold;
+    margin: 0 0 10px;
+    font-size: 21px;
+    font-weight: 850;
+    color: #111827;
+    letter-spacing: -0.04em;
 }
 
 .delivery-details {
-    color: #cbd5e1;
-    font-size: 0.95rem;
+    margin: 0 0 7px;
+    color: #6b7280;
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+.delivery-details:last-child {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: 6px;
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: #eef2f7;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 800;
 }
 
 .status-badge {
-    background: #475569;
-    color: white;
-    width: 90px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: bold;
     flex-shrink: 0;
+    min-width: 86px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    padding: 9px 13px;
+    background: #fff7ed;
+    color: #c2410c;
+    font-size: 13px;
+    font-weight: 850;
 }
 
 .delivery-item.done .status-badge {
-    background: #16a34a;
+    background: #dcfce7;
+    color: #166534;
 }
 
 .note-editor-box {
     display: grid;
     gap: 8px;
+    padding: 16px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid #e5e7eb;
 }
 
 .note-label {
-    color: #94a3b8;
-    font-size: 0.85rem;
-    font-weight: bold;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 850;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 .note-input {
     width: 100%;
-    min-height: 70px;
+    min-height: 86px;
     resize: vertical;
-    border: 1px solid #334155;
-    border-radius: 14px;
-    padding: 12px;
-    background: #020617;
-    color: #f8fafc;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.95rem;
+    border: 0;
+    outline: none;
+    border-radius: 16px;
+    padding: 14px 15px;
+    background: #f3f4f6;
+    color: #1d1d1f;
+    font-family: inherit;
+    font-size: 15px;
+    line-height: 1.5;
 }
 
 .note-input:focus {
-    outline: 2px solid #38bdf8;
-    border-color: #38bdf8;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 122, 255, 0.12);
 }
 
 .note-save-info {
-    color: #64748b;
-    font-size: 0.8rem;
+    margin: 0;
+    color: #8a93a3;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 .item-actions {
     display: flex;
+    justify-content: flex-end;
     gap: 10px;
-    flex-wrap: wrap;
+}
+
+.done-button,
+.open-button {
+    border: 0;
+    border-radius: 999px;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: 850;
+    cursor: pointer;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
 }
 
 .done-button {
-    background: #16a34a;
+    background: #34c759;
+    color: white;
+    box-shadow: 0 10px 22px rgba(52, 199, 89, 0.28);
 }
 
 .done-button:hover {
-    background: #15803d;
+    background: #2fb84f;
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(52, 199, 89, 0.34);
 }
 
 .open-button {
-    background: #64748b;
+    background: #eef2f7;
+    color: #1d1d1f;
 }
 
 .open-button:hover {
-    background: #475569;
+    background: #e5e7eb;
+    transform: translateY(-1px);
 }
 
-@media (max-width: 700px) {
-    .tour-info,
-    .stats-grid {
+@media (max-width: 900px) {
+    .app-shell {
         grid-template-columns: 1fr;
     }
 
-    .delivery-top,
-    .street-title {
-        flex-direction: column;
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .topbar {
         align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .delivery-top {
+        flex-direction: column;
     }
 
     .status-badge {
         width: 100%;
     }
 
-    .app-header h1 {
-        font-size: 2rem;
+    .street-title {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .street-count {
+        width: 100%;
+        text-align: center;
+    }
+
+    .item-actions {
+        justify-content: stretch;
+    }
+
+    .done-button,
+    .open-button {
+        width: 100%;
     }
 }
