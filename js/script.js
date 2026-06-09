@@ -188,6 +188,14 @@ function getPriorityText(priority) {
     return "🟢 Normal";
 }
 
+function getActionButtonText(done) {
+    if (done) {
+        return "Wieder öffnen";
+    }
+
+    return "Als erledigt markieren";
+}
+
 function renderDeliveryItem(point) {
     const done = isDone(point.id);
     const currentNote = getPointNote(point);
@@ -228,7 +236,7 @@ function renderDeliveryItem(point) {
 
         <div class="item-actions">
             <button class="${done ? "open-button" : "done-button"}" data-id="${point.id}">
-                ${done ? "Wieder offen" : "Erledigt"}
+                ${getActionButtonText(done)}
             </button>
         </div>
     `;
